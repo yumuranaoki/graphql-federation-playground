@@ -1,1 +1,5 @@
-export const users = [{ id: 1, displayName: "kneegorilla" }];
+const db = {
+  users: [{ id: 140, displayName: "kneegorilla" }],
+};
+
+export default db;

@@ -9,4 +9,9 @@ type Query {
 type Review @key(fields: "id") {
   id: ID!
   comment: String!
+  reviewer: User!
+}
+
+type User @key(fields: "id") {
+  id: ID!
 }

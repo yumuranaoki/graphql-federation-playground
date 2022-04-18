@@ -1,18 +1,18 @@
 import { ApolloServer, gql } from "apollo-server";
 import { buildSubgraphSchema } from "@apollo/subgraph";
 import { readFileSync } from "fs";
-import { users } from "./db";
+import db from "./db";
 
 const typeDefs = gql(readFileSync("./user.graphql", { encoding: "utf-8" }));
 const resolvers = {
   Query: {
     users: () => {
-      return users;
+      return db.users;
     },
   },
   User: {
-    reviews: (_ref) => {
-      return [{ id: 1 }];
+    __resolveReference: (ref) => {
+      return db.users.find(({ id }) => id == ref.id);
     },
   },
 };

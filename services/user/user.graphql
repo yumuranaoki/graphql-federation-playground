@@ -9,9 +9,4 @@ type Query {
 type User @key(fields: "id") {
   id: ID!
   displayName: String!
-  reviews: [Review]
-}
-
-type Review @key(fields: "id") {
-  id: ID!
 }
