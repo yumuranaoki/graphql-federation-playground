@@ -26,7 +26,7 @@ const server = new ApolloServer({
 server
   .listen({ port: 4002 })
   .then(({ url }) => {
-    console.log(`🚀 Products subgraph ready at ${url}`);
+    console.log(`🚀 Review subgraph ready at ${url}`);
   })
   .catch((err) => {
     console.error(err);
